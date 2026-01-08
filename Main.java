@@ -22,4 +22,29 @@ public class Main {
             System.out.print("Fallo al ingresar");
         }
     }
+
+    
+    public static void operativa_cuenta(CCuenta cuenta1, float cantidad) {
+        double saldoActual;
+
+        saldoActual = cuenta1.estado();
+        System.out.println("El saldo inicial dentro de operativa_cuenta: " + saldoActual);
+
+        try {
+            cuenta1.retirar(2300);
+        } catch (Exception e) {
+            System.out.print("Fallo al retirar");
+        }
+
+        try {
+            System.out.println("Ingreso en cuenta dentro de operativa_cuenta");
+            cuenta1.ingresar(cantidad);
+        } catch (Exception e) {
+            System.out.print("Fallo al ingresar");
+        }
+
+        saldoActual = cuenta1.estado();
+        System.out.println("Saldo final dentro de operativa_cuenta: " + saldoActual);
+    }
+}
 }
